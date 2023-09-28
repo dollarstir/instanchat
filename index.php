@@ -11,7 +11,7 @@ require 'vendor/autoload.php';
     // Find your Account SID and Auth Token at twilio.com/console
     // and set the environment variables. See http://twil.io/secure
     $sid = "AC283146a35a1eb01abbc41967c54864bd";
-    $token = "8836 f8c16aafbd4c3ac2d18f7190ad6c";
+    $token = "43c3ef0fd1fea7687e704b0718323ecf";
     $twilio = new Client($sid, $token);
     
     $message = $twilio->messages
