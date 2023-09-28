@@ -1,9 +1,9 @@
 <?php
 // require 'vendor/autoload.php';gd
 
-function sendmessage(){
+
     // use Twilio\Rest\Client;
-    require 'vendor/autoload.php';
+
     
     require 'config.php';
 
@@ -36,7 +36,3 @@ function sendmessage(){
     }
     
     
-}
-
-
-sendmessage();
