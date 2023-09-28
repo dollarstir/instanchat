@@ -1,10 +1,9 @@
 <?php
-require 'config.php';
+// require 'config.php';
 require 'vendor/autoload.php';
 
 use Twilio\TwiML\MessagingResponse;
 
-function receivsms(){
     require 'config.php';
     $response = new MessagingResponse();
     // $message = $response->message('The Robots are coming! Head for the hills!');
@@ -29,4 +28,4 @@ function receivsms(){
 
 
 
-}
+
