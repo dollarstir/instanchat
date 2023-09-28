@@ -37,3 +37,5 @@ function sendmessage(){
     
 }
 
+
+sendmessage();
