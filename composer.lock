@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "19b5605cedb4c63c30cf1063e2032a8f",
+    "content-hash": "4a927b9fb20234a45a99d7219b2da826",
     "packages": [
         {
             "name": "firebase/php-jwt",
@@ -141,16 +141,16 @@
         },
         {
             "name": "twilio/sdk",
-            "version": "7.9.0",
+            "version": "7.11.0",
             "source": {
                 "type": "git",
                 "url": "git@github.com:twilio/twilio-php.git",
-                "reference": "e23666fbe0cf8c85cb3cbd182f119f6de642c65f"
+                "reference": "3ba1a8da94f7c92d2cd0d17d8155636962769991"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twilio/twilio-php/zipball/e23666fbe0cf8c85cb3cbd182f119f6de642c65f",
-                "reference": "e23666fbe0cf8c85cb3cbd182f119f6de642c65f",
+                "url": "https://api.github.com/repos/twilio/twilio-php/zipball/3ba1a8da94f7c92d2cd0d17d8155636962769991",
+                "reference": "3ba1a8da94f7c92d2cd0d17d8155636962769991",
                 "shasum": ""
             },
             "require": {
@@ -186,7 +186,7 @@
                 "sms",
                 "twilio"
             ],
-            "time": "2023-08-24T07:38:49+00:00"
+            "time": "2023-09-21T08:38:54+00:00"
         }
     ],
     "packages-dev": [],
