@@ -2,6 +2,10 @@
 
     
     require 'config.php';
+    require 'vendor/autoload.php';
+
+
+    use Twilio\Rest\Client;
 
 
 if(isset($_GET['action'])){
@@ -27,8 +31,29 @@ if(isset($_GET['action'])){
 
         if($_GET['action'] == 'sendmsg') {
 
+            
+
+
             $data = extract($_POST);
-            $sql = "INSERT INTO `messages`(`msg_body`, `msg_from`, `msg_to`, `date_created`) VALUES ('$msg_body','$msg_from','$msg_to','" . date('Y-m-d H:i:s') . "')";
+
+                    $sid = "AC283146a35a1eb01abbc41967c54864bd";
+            $token = "43c3ef0fd1fea7687e704b0718323ecf";
+            $twilio = new Client($sid, $token);
+            
+            $message = $twilio->messages
+            ->create($msg_from, // to
+
+
+            [
+                "body" => "Working With mms",
+                "from" => $msg_to,
+                "mediaUrl" => ["https://bydayjobafrica.com/storage/auth/login/IGiCLROPbiZVXK1xtVHPpzcIxRcVYlJm7Sxtm9P7.jpg"]
+                ]
+            );
+            
+            // print($message->sid);
+
+            $sql = "INSERT INTO `messages`(`msg_body`, `msg_from`, `msg_to`, `date_created`) VALUES ('$msg_body','$msg_to','$msg_from','" . date('Y-m-d H:i:s') . "')";
             $query = mysqli_query($conn, $sql);
             if($query) {
                 echo json_encode(array('status' => 'success','msg' => 'Message Sent'));
@@ -42,10 +67,6 @@ if(isset($_GET['action'])){
 
 
 
-// require 'vendor/autoload.php';
-
-
-//     use Twilio\Rest\Client;
 
 
 
