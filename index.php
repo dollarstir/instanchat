@@ -1,8 +1,9 @@
 <?php
-require 'vendor/autoload.php';
+// require 'vendor/autoload.php';gd
 
-use Twilio\Rest\Client;
 function sendmessage(){
+    // use Twilio\Rest\Client;
+    require 'vendor/autoload.php';
     
     require 'config.php';
 
@@ -11,7 +12,7 @@ function sendmessage(){
     // and set the environment variables. See http://twil.io/secure
     $sid = "AC283146a35a1eb01abbc41967c54864bd";
     $token = "8836f8c16aafbd4c3ac2d18f7190ad6c";
-    $twilio = new  Client($sid, $token);
+    $twilio = new  Twilio\Rest\Client($sid, $token);
     
     $message = $twilio->messages
     ->create("+12349782415", // to
