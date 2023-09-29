@@ -11,6 +11,8 @@
 if(isset($_GET['action'])){
 
     if($_GET['action'] == 'load'){
+        $msg_from = "+18447261728";
+        $msg_to = "+12349782415";
 
         $sql = "SELECT * FROM `messages` WHERE ( msg_from = $msg_from  AND msg_to = $msg_to)  OR (( msg_from =$msg_to   AND msg_to =$msg_from)) ORDER BY `date_created` DESC";
         $query = mysqli_query($conn, $sql);
