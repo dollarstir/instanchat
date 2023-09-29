@@ -1,5 +1,6 @@
 $(function(){
     $(".loadingbar").hide();
+    $(".msgdata").load('send.php?action=load');
     // $(".toast").toast("show");
 
 
