@@ -53,7 +53,7 @@ if(isset($_GET['action'])){
             
             // print($message->sid);
 
-            $sql = "INSERT INTO `messages`(`msg_body`, `msg_from`, `msg_to`, `date_created`) VALUES ('$msg_body','$msg_to','$msg_from','" . date('Y-m-d H:i:s') . "')";
+            $sql = "INSERT INTO `messages`(`msg_body`, `msg_from`, `msg_to`, `date_created`, `msg_params`) VALUES ('$msg_body','$msg_to','$msg_from','" . date('Y-m-d H:i:s') . "','".json_encode($message)."')";
             $query = mysqli_query($conn, $sql);
             if($query) {
                 echo json_encode(array('status' => 'success','msg' => 'Message Sent'));

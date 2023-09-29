@@ -14,7 +14,7 @@ use Twilio\TwiML\MessagingResponse;
     $to = $_REQUEST['To'];
     $date_created = date('Y-m-d H:i:s');
 
-    $sql = "INSERT INTO `messages`(`msg_body`, `msg_from`, `msg_to`, `date_created`) VALUES ('$body','$from','$to','$date_created')";
+    $sql = "INSERT INTO `messages`(`msg_body`, `msg_from`, `msg_to`, `date_created`,`msg_params`) VALUES ('$body','$from','$to','$date_created', '".json_encode($_REQUEST)."')";
     $query = mysqli_query($conn, $sql);
     if($query){
         $response->message('Message Received');
