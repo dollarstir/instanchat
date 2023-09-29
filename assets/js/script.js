@@ -13,6 +13,8 @@ $(function(){
     function resp(data){
 
         $(".loadingbar").hide();
+
+        console.log(data);
         var data = JSON.parse(data);
 
         if(data.status == 'error'){
