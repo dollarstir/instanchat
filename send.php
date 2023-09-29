@@ -12,17 +12,28 @@ if(isset($_GET['action'])){
 
     if($_GET['action'] == 'load'){
 
-        $sql = "SELECT * FROM `messages` ORDER BY `date_created` DESC";
+        $sql = "SELECT * FROM `messages` WHERE ( msg_from = $msg_from  AND msg_to = $msg_to)  OR (( msg_from =$msg_to   AND msg_to =$msg_from)) ORDER BY `date_created` DESC";
         $query = mysqli_query($conn, $sql);
         $data = '';
         while($row = mysqli_fetch_assoc($query)){
-            $data .= '<li class="clearfix">
-            <div class="message-data text-right">
-                <span class="message-data-time">'.$row['date_created'].'</span>
-                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar">
-            </div>
-            <div class="message other-message float-right">'.$row['msg_body'].'</div>
-        </li>';
+            
+            if($row['msg_from'] == $msg_from){
+                $data .= '<li class="clearfix">
+                <div class="message-data text-right">
+                    <span class="message-data-time">'.date('h:i A',strtotime($row['date_created'])).'</span>
+                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="avatar">
+                </div>
+                <div class="message other-message float-right">'.$row['msg_body'].'</div>
+            </li>';
+            }else{
+                $data .= '<li class="clearfix">
+                            <div class="message-data">
+                                <span class="message-data-time">' . date('h:i A', strtotime($row['date_created'])) . '</span>
+                            </div>
+                            <div class="message my-message">' . $row['msg_body'] . '</div>
+                        </li>';
+            }
+
         }
         echo ($data);
     }
