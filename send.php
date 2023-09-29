@@ -47,7 +47,7 @@ if(isset($_GET['action'])){
             [
                 "body" => $msg_body,
                 "from" => $msg_to,
-                "mediaUrl" => ["https://bydayjobafrica.com/storage/auth/login/IGiCLROPbiZVXK1xtVHPpzcIxRcVYlJm7Sxtm9P7.jpg"]
+                // "mediaUrl" => ["https://bydayjobafrica.com/storage/auth/login/IGiCLROPbiZVXK1xtVHPpzcIxRcVYlJm7Sxtm9P7.jpg"]
                 ]
             );
             
